@@ -1,0 +1,102 @@
+@import '~bootstrap/scss/bootstrap';
+@import "vars";
+
+nav {
+
+    background-color: $outer-space;
+}
+
+#nav-title {
+    font-size: 3em;
+    font-family: $righteous;
+    font-weight: bold;
+    color: $java;
+    text-decoration: underline $jaffa;
+}
+
+#title-films {
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: auto;
+    text-align: center;
+    font-size: 3em;
+    font-family: $righteous;
+    font-weight: bold;
+    color: $java;
+    text-decoration: underline $outer-space;
+}
+
+#title-films:hover {
+    color: $outer-space;
+}
+
+.separator {
+    border-left: 2px solid $jaffa;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 25%;
+}
+
+#title-series {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 3em;
+    font-family: $righteous;
+    font-weight: bold;
+    color: $outer-space;
+    text-decoration: underline $java;
+}
+
+#title-series:hover {
+    color: $java;
+}
+
+.link {
+    color: $jaffa;
+    font-size: 30px;
+}
+
+.link:hover {
+    color: $java;
+    font-size: 30px;
+}
+
+.link-serie {
+    background-color: $outer-space;
+    color: $java;
+    font-family: $vollkorn;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px grey;
+    list-style: none;
+    width: 12em;
+    margin-bottom: 1em;
+    margin-top: 5em;
+    padding: 1em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    background-color: $outer-space;
+    color: $java;
+    font-family: $vollkorn;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px grey;
+    list-style: none;
+    width: 10em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

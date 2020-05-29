@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block body %}
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<span id="nav-title" class="navbar-text mx-md-auto  h1">Choisissez votre style de film ou de série</span>
+	</nav>
+	<div class="row">
+		<div class="col-6">
+			<h1 id="title-films">Top 100 Films par catégorie</h1>
+			<ul class="ul-films">
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls009668579'}) }}">Action</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls009609925'}) }}">Aventure</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls009668747'}) }}">Comédie</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls066055776'}) }}">Drame</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls009669258'}) }}">Fantaisie</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls066355376'}) }}">Horreur</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show",{'list':'ls009668314'}) }}">Thriller</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show", {'list':'ls009668082'}) }}">Science-fiction</a>
+				</li>
+				<li>
+					<a class="link" href="{{ path("movies_show", {'list':'ls095095429'}) }}">Romance</a>
+				</li>
+			</ul>
+		</div>
+		<div class="separator"></div>
+		<div class="col-6">
+			<h1 id="title-series">Top 100 Séries</h1>
+			<div class="link-serie">
+				<a class="link" href="{{ path("series_show", {'list':'ls052258183'})}}">Liste des meilleures series à voir absolument</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

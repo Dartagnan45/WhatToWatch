@@ -1,0 +1,82 @@
+@import '~bootstrap/scss/bootstrap';
+@import "vars";
+
+body {
+    background-color: $jaffa;
+}
+
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/admission-2974645_1920.jpg');
+    background-color: transparent;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.title {
+    margin: 2%;
+    color: $jaffa;
+    font-family: $righteous;
+    font-weight: bold;
+    font-size: 5em;
+    text-decoration: underline overline $java;
+}
+
+p {
+    font-family: $vollkorn;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.p-index {
+    font-family: $vollkorn;
+    font-size: 25px;
+    font-weight: bold;
+    color: $java;
+    text-align: center;
+}
+
+.block {
+    display: flex;
+    background-color: $outer-space;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    height: 15em;
+    opacity: 0.7;
+    text-align: center;
+    align-items: center;
+
+}
+
+#button {
+    text-align: center;
+    align-items: center;
+    color: $java;
+    font-weight: bold;
+    font-family: $vollkorn;
+    font-size: 20px;
+    display: flex;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $jaffa;
+    padding: 1em;
+    width: 10em;
+}
+
+#button:hover {
+    color: $jaffa;
+    background-color: $java;
+    font-weight: bold;
+    font-family: $vollkorn;
+    font-size: 20px;
+}
+
+.text-button {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<body class="body-movies">
+
+		<h1 class="title-show">
+			{{ movies.title }}</h1>
+
+		<div class="row">
+
+			{% for movie in movies.items %}
+				<div class="card col-2">
+					<p class="card-title">{{ movie.title }}</p>
+					<div class="card-image"><img src="{{ movie.image }}"/></div>
+					<div class="circle">
+						<span class="rating">{{ movie.imDbRating }}</span>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</body>
+{% endblock %}
