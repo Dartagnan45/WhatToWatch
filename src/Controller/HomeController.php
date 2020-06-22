@@ -5,8 +5,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
-
 
 class HomeController extends AbstractController
 {
@@ -27,7 +25,6 @@ class HomeController extends AbstractController
     public function movies_Show(HttpClientInterface $httpClient, string $list)
     {
         $this->list = $list;
-
 
         $response = $httpClient->request(
             'GET',

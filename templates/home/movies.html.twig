@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
 	<body class="body-movies">
 
@@ -7,17 +6,20 @@
 			{{ movies.title }}</h1>
 
 		<div class="row">
-
-			{% for movie in movies.items %}
+			<pre>
+	{{ dump(movies) }}
+</pre>
+			{% for movie in movies.items("imbDrating", "asc")|slice(0, 50) %}
 				<div class="card col-2">
 					<p class="card-title">{{ movie.title }}</p>
-					<div class="card-image"><img src="{{ movie.image }}"/></div>
+					<div class="card-image">
+						<a class="link" href=""><img src="{{ movie.image }}"/></a>
+					</div>
 					<div class="circle">
 						<span class="rating">{{ movie.imDbRating }}</span>
 					</div>
 				</div>
 			{% endfor %}
-
-		</div>
+		</body>
 	</body>
-{% endblock %}
+</div></body>{% endblock %}
