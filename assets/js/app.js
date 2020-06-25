@@ -9,6 +9,7 @@
 import '../css/whatToWatch.scss';
 import '../css/home.scss';
 import '../css/movies.scss';
+import '../img/gun.jpg'
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';

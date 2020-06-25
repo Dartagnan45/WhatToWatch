@@ -2,14 +2,21 @@
 {% block body %}
 	<body class="body-movies">
 
-		<h1 class="title-show">
-			{{ movies.title }}</h1>
-
+		{% for key,genre in genres %}
+			{% if list == genre %}
+				<h1 class="title-show">{{ title~key }}</h1>
+			{% endif %}
+		{% endfor %}
+		<select id="select">
+			<option>Trier par</option>
+			<option>notes croissantes</option>
+			<option>notes décroissantes</option>
+		</select>
+		{# <pre>
+							{{ dump(movies) }}
+						</pre> #}
 		<div class="row">
-			<pre>
-	{{ dump(movies) }}
-</pre>
-			{% for movie in movies.items("imbDrating", "asc")|slice(0, 50) %}
+			{% for movie in movies.items|sort((a,b) => b.imDbRating <=> a.imDbRating)|slice(0, 50)%}
 				<div class="card col-2">
 					<p class="card-title">{{ movie.title }}</p>
 					<div class="card-image">
@@ -20,6 +27,7 @@
 					</div>
 				</div>
 			{% endfor %}
-		</body>
+
+		</div>
 	</body>
-</div></body>{% endblock %}
+{% endblock %}
