@@ -1,0 +1,30 @@
+@import "vars";
+
+.movie-poster {
+    margin-top: 5%;
+}
+
+.description {
+    margin-top: 5%;
+    color: $mystic;
+}
+
+.stars {
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stars .image-stars {
+    width: 7rem; 
+    height: 8rem;
+    border-radius: 100%;
+    border: solid 2px $java;
+}
+
+.director {
+    color: $mystic;
+    text-decoration: underline $jaffa;
+}
+
+

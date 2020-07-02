@@ -1,23 +1,16 @@
-@import '~bootstrap/scss/bootstrap';
 @import "vars";
 
-// html {
-//     background-color: black;
-//     color: white;
-// }
-
 .body-movies {
-    margin-left: 2em;
     background-color: $outer-space;
     color: $mystic;
 }
 
 .title-show {
-    margin: 2%;
+    margin-top: 2%;
     color: $jaffa;
     font-family: $righteous;
     font-weight: bold;
-    font-size: 5em;
+    font-size: 4em;
     text-decoration: underline overline $java;
     margin-left: auto;
     margin-right: auto;
@@ -25,17 +18,18 @@
 }
 
 .card {
-    display: block;
-    width: 210px;
-    border: 5px solid black;
-    overflow: hidden;
-    margin: 20px 20px 20px auto;
-    border-radius: 10px;
     background-color: $outer-space;
+    width: 18rem;
+    margin: 2rem;
 }
 
-.card-title {
-    font-size: 15px;
+.poster {
+    width: 18rem;
+    height: 28rem;
+}
+
+.card-text {
+    font-size: rem-clac(10);
     font-weight: bold;
     text-align: center;
     text-decoration: underline $jaffa;
@@ -45,32 +39,10 @@
     white-space: nowrap;
 }
 
-.card-image {
-    height: 340px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
+.card-body{
+    background-color: $outer-space;
+    border: solid 1px $mystic;
 
-.card:hover .card-image img {
-    width: 120%;
-    filter: grayscale(1);
-}
-
-.card-image img {
-    width: 105%;
-    position: absolute;
-    border-radius: 10px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: grayscale(0);
-    transition-property: filter width;
-    transition-duration: .3s;
-    transition-timing-function: ease;
-    margin-bottom: 20px;
-    z-index: 1;
 }
 
 .circle {
@@ -80,7 +52,7 @@
     left: 3%;
     width: 40px;
     height: 40px;
-    color: whitesmoke;
+    color: $mystic;
     background-color: $outer-space;
     border: solid 1px balck;
     border-radius: 100%;
@@ -93,6 +65,9 @@
     vertical-align: middle;
 }
 
-select {
-    color: whitesmoke;
+.select {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: rem-clac(10);
 }

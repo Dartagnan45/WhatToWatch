@@ -9,7 +9,18 @@
 import '../css/whatToWatch.scss';
 import '../css/home.scss';
 import '../css/movies.scss';
-import '../img/gun.jpg'
+import '../css/navbar.scss';
+import '../css/content.scss';
+import '../img/aventure.jpg';
+import '../img/espace.jpg';
+import '../img/gun.jpg';
+import '../img/happy.jpg';
+import '../img/horror.jpg';
+import '../img/series.jpg';
+import '../img/action.jpg';
+import '../img/love.jpg';
+import '../img/fantasy.jpg';
+import '../img/combat-de-chat.jpg';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
@@ -25,6 +36,7 @@ require('bootstrap');
 // require('bootstrap/js/dist/tooltip');
 // require('bootstrap/js/dist/popover');
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 });
+

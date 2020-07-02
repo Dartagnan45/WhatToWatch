@@ -1,0 +1,30 @@
+@import "vars";
+
+.navbar {
+    background-color: $jaffa;
+}
+
+.navbar-default .navbar-brand {
+    font-family: $righteous;
+    font-weight: bold;
+    color: $java;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: $java;
+    font-family: $vollkorn;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    background-color: rgba($outer-space, 0.3);
+}
+
+.dropdown-item {
+    color: $jaffa;
+}
+
+.dropdown-item:hover {
+    background-color: rgba($mystic, 0.5);
+    color: $java;
+}

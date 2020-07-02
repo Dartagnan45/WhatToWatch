@@ -8,7 +8,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class HomeController extends AbstractController
 {
-    private $genres = [
+    protected $genres = [
         'Action' => 'ls009668579',
         'Aventure' => 'ls009609925',
         'Comédie' => 'ls009668747',
@@ -16,10 +16,11 @@ class HomeController extends AbstractController
         'Fantaisie' => 'ls009669258',
         'Horreur' => 'ls066355376',
         'Thriller' => 'ls009668314',
-        'Science fiction' => 'ls009668082',
-        'Romance' => 'ls095095429'
-
+        'Science-fiction' => 'ls009668082',
+        'Romance' => 'ls095095429',
+        'series' => 'ls052258183'
     ];
+
 
     /**
      * @Route("/home", name="home")
@@ -27,9 +28,10 @@ class HomeController extends AbstractController
     public function index()
     {
         $genres = $this->getGenres();
+
         return $this->render('/home/index.html.twig', [
             'title' => 'Accueil',
-            'genres' => $genres
+            'genres' => $genres,
         ]);
     }
 
@@ -40,18 +42,18 @@ class HomeController extends AbstractController
     {
         $genres = $this->getGenres();
         $this->list = $list;
-        $response = $httpClient->request(
-            'GET',
-            "https://imdb-api.com/fr/API/IMDbList/k_v91d9g6r/{$this->list}"
-        );
 
-        $response->getStatusCode();
-        // $statusCode = 200
-        $response->getHeaders()['content-type'][0];
-        // $contentType = 'application/json'
-        $response->getContent();
+       
+            $response = $httpClient->request(
+                'GET',
+                "https://imdb-api.com/fr/API/IMDbList/k_v91d9g6r/{$this->list}"
+            );
 
-
+            $response->getStatusCode();
+            // $statusCode = 200
+            $response->getHeaders()['content-type'][0];
+            // $contentType = 'application/json'
+            $response->getContent();
 
         // dd($response->toArray());
         return $this->render('/home/movies.html.twig', [
@@ -59,34 +61,34 @@ class HomeController extends AbstractController
             'list' => $list,
             'genres' => $genres,
             'movies' => $response->toArray(),
-            'title' => 'Liste des 50 meilleurs films '
+            'title_films' => 'Top 50 des films genre : ',
+            'title_series' => 'Top 50 des '
         ]);
     }
 
     /**
-     * @Route("/series_show/{list}", name="series_show")
+     * @Route("/content/{title}", name="content")
      */
-    public function series_Show(HttpClientInterface $httpClient, string $list)
+    public function content_show(HttpClientInterface $httpClient, string $title)
     {
-        $this->list = $list;
+        $genres = $this->getGenres();
+        $this->title = $title;
+        
+            $response = $httpClient->request(
+                'GET',
+                "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}"
+            );
 
-        $response = $httpClient->request(
-            'GET',
-            "https://imdb-api.com/fr/API/IMDbList/k_v91d9g6r/{$this->list}"
-        );
-
-        $response->getStatusCode();
-        // $statusCode = 200
-        $response->getHeaders()['content-type'][0];
-        // $contentType = 'application/json'
-        $response->getContent();
-
-        // dd($response->toArray());
-        return $this->render('/home/series.html.twig', [
-            'controller_name' => 'HomeController',
-            'list' => $list,
-            'series' => $response->toArray()
-
+            $response->getStatusCode();
+            // $statusCode = 200
+            $response->getHeaders()['content-type'][0];
+            // $contentType = 'application/json'
+            $response->getContent();
+    
+        return $this->render('/home/content.html.twig', [
+            'movie' => $response->toArray(),
+            'genres' => $genres,
+            'title' => $title
         ]);
     }
 
@@ -103,7 +105,7 @@ class HomeController extends AbstractController
      *
      * @return  self
      */
-    public function setGenress($genres)
+    public function setGenres($genres)
     {
         $this->genres = $genres;
 

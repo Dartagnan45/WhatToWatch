@@ -1,107 +1,60 @@
-@import '~bootstrap/scss/bootstrap';
 @import "vars";
 
-nav {
-
+.body-home {
     background-color: $outer-space;
 }
 
-#nav-title {
-    font-size: 3em;
-    font-family: $righteous;
-    font-weight: bold;
-    color: $java;
-    text-decoration: underline $jaffa;
-}
-
-#title-films {
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: auto;
+#home-title {
     text-align: center;
-    font-size: 3em;
-    font-family: $righteous;
-    font-weight: bold;
-    color: $java;
-    text-decoration: underline $outer-space;
-}
-
-#title-films:hover {
-    color: $outer-space;
-}
-
-.separator {
-    border-left: 2px solid $jaffa;
-    height: 500px;
-    position: absolute;
-    left: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    top: 25%;
-}
-
-#title-series {
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 3em;
-    font-family: $righteous;
-    font-weight: bold;
-    color: $outer-space;
-    text-decoration: underline $java;
-}
-
-#title-series:hover {
-    color: $java;
-}
-
-.link {
     color: $jaffa;
-    font-size: 30px;
-}
-
-.link:hover {
-    color: $java;
-    font-size: 30px;
-}
-
-.link-serie {
-    background-color: $outer-space;
-    color: $java;
-    font-family: $vollkorn;
+    font-family: $righteous;
     font-weight: bold;
-    font-size: 1.5em;
-    border-radius: 10px;
-    box-shadow: 10px 5px 5px grey;
-    list-style: none;
-    width: 12em;
-    margin-bottom: 1em;
-    margin-top: 5em;
-    padding: 1em;
-    text-align: center;
+    font-size: 3em;
+    text-decoration: underline overline $java;
+    margin-top: rem-calc(25);
+    margin-bottom: rem-calc(20);
+}
+
+// carousel
+#demo {
     margin-left: auto;
     margin-right: auto;
+    width: rem-calc(1100);
+    height: rem-calc(500);
+    border: solid 5px $mystic;
+
+    .carousel-inner {
+        width: 100%;
+        height: 100%;
+
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
-li {
-    background-color: $outer-space;
-    color: $java;
-    font-family: $vollkorn;
-    font-weight: bold;
-    font-size: 1.5em;
-    border-radius: 10px;
-    box-shadow: 10px 5px 5px grey;
-    list-style: none;
-    width: 10em;
-    margin-bottom: 1em;
-    margin-top: 1em;
+.carousel-caption {
+    position: absolute;
+    background: rgba($mystic, 0.5);
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+
+
 }
 
-.carousel-inner img {
-    width: 640px;
-    height: 360px;
+.carousel-caption h3 a {
+    color: $outer-space;
+    font-size: rem-calc(50);
+    text-decoration: underline;
+}
+
+.carousel-caption p {
+    color: $java;
+    background: rgba($outer-space, 0.7);
+    font-size: rem-calc(30);
 }

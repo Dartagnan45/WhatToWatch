@@ -1,8 +1,15 @@
-@import '~bootstrap/scss/bootstrap';
 @import "vars";
 
 body {
     background-color: $jaffa;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $righteous;
+    font-weight: bold;
 }
 
 .home {
@@ -25,9 +32,7 @@ body {
 
 p {
     font-family: $vollkorn;
-    font-size: 25px;
     font-weight: bold;
-    text-align: left;
 }
 
 .p-index {
@@ -36,20 +41,21 @@ p {
     font-weight: bold;
     color: $java;
     text-align: center;
+    text-decoration: underline $jaffa;
 }
 
 .block {
     display: flex;
-    background-color: $outer-space;
+    background-color: rgba($mystic, 0.2);
     margin-top: 7%;
     margin-left: auto;
     margin-right: auto;
-    width: 50em;
-    height: 15em;
+    width: 50%;
+    height: rem-calc(200);
     opacity: 0.7;
     text-align: center;
     align-items: center;
-
+    border-radius: rem-calc(10);
 }
 
 #button {

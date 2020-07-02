@@ -6,32 +6,11 @@
 
 {% block body %}
 
-	<nav class="navbar navbar-expand-lg navbar-dark">
-		<span id="nav-title" class="navbar-text mx-md-auto  h1">Choisissez votre style de film ou de série</span>
-	</nav>
+	{% include "navbar.html.twig" %}
+	
+	<h1 id="home-title">Choisissez votre style de film ou les séries</h1>
 
 	{% include 'carrousel.html.twig' %}
 
-	<div class="row">
-		<div class="col-6">
-			<h1 id="title-films">Top 50 des Films par catégorie</h1>
-
-			<ul class="ul-films">
-
-				{% for key,genre in genres %}
-					<li>
-						<a class="link" href="{{ path("movies_show",{ 'list': genre }) }}">{{ key }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
-		<div class="separator"></div>
-		<div class="col-6">
-			<h1 id="title-series">Top 100 Séries</h1>
-			<div class="link-serie">
-				<a class="link" href="{{ path("series_show", {'list':'ls052258183'})}}">Liste des meilleures series à voir absolument</a>
-			</div>
-		</div>
-	</div>
 
 {% endblock %}

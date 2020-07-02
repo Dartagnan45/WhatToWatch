@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class WhatToWatchController extends AbstractController
 {
     /**
-     * @Route("/", name="what_to_watch")
+     * @Route("/", name="/")
      */
     public function index()
     {
