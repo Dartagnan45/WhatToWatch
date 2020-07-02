@@ -9,10 +9,10 @@
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Listes de films
 				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
 					{% for key,genre in genres %}
 						{% if key != 'series' %}
-							<a class="dropdown-item" href="{{ path("movies_show",{ 'list': genre }) }}">{{ key }}</a>
+							<a id="item" class="dropdown-item " href="{{ path("movies_show",{ 'list': genre }) }}">{{ key }}</a>
 						{% endif %}
 					{% endfor %}
 				</div>

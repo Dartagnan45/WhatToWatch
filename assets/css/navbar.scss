@@ -16,15 +16,15 @@
     font-weight: bold;
 }
 
-.dropdown-menu {
+#menu {
     background-color: rgba($outer-space, 0.3);
 }
 
-.dropdown-item {
+#item {
     color: $jaffa;
 }
 
-.dropdown-item:hover {
+#item:hover {
     background-color: rgba($mystic, 0.5);
     color: $java;
 }
