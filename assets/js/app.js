@@ -21,6 +21,8 @@ import '../img/action.jpg';
 import '../img/love.jpg';
 import '../img/fantasy.jpg';
 import '../img/combat-de-chat.jpg';
+import '../img/triste.jpg';
+import '../img/suspense.jpg';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
