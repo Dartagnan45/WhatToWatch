@@ -23,6 +23,8 @@ import '../img/fantasy.jpg';
 import '../img/combat-de-chat.jpg';
 import '../img/triste.jpg';
 import '../img/suspense.jpg';
+import '../img/error-404.jpg';
+import '../img/YouTube_23392.png';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -20,7 +21,6 @@ class HomeController extends AbstractController
         'Romance' => 'ls095095429',
         'series' => 'ls052258183'
     ];
-
 
     /**
      * @Route("/home", name="home")
@@ -43,17 +43,17 @@ class HomeController extends AbstractController
         $genres = $this->getGenres();
         $this->list = $list;
 
-       
-            $response = $httpClient->request(
-                'GET',
-                "https://imdb-api.com/fr/API/IMDbList/k_v91d9g6r/{$this->list}"
-            );
 
-            $response->getStatusCode();
-            // $statusCode = 200
-            $response->getHeaders()['content-type'][0];
-            // $contentType = 'application/json'
-            $response->getContent();
+        $response = $httpClient->request(
+            'GET',
+            "https://imdb-api.com/fr/API/IMDbList/k_v91d9g6r/{$this->list}"
+        );
+
+        $response->getStatusCode();
+        // $statusCode = 200
+        $response->getHeaders()['content-type'][0];
+        // $contentType = 'application/json'
+        $response->getContent();
 
         // dd($response->toArray());
         return $this->render('/home/movies.html.twig', [
@@ -73,24 +73,51 @@ class HomeController extends AbstractController
     {
         $genres = $this->getGenres();
         $this->title = $title;
-        
-            $response = $httpClient->request(
-                'GET',
-                "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}"
-            );
 
-            $response->getStatusCode();
-            // $statusCode = 200
-            $response->getHeaders()['content-type'][0];
-            // $contentType = 'application/json'
-            $response->getContent();
-    
+        $response = $httpClient->request(
+            'GET',
+            "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}"
+        );
+
+        $response->getStatusCode();
+        // $statusCode = 200
+        $response->getHeaders()['content-type'][0];
+        // $contentType = 'application/json'
+        $response->getContent();
+
+
         return $this->render('/home/content.html.twig', [
             'movie' => $response->toArray(),
             'genres' => $genres,
-            'title' => $title
+            'title' => $title,
         ]);
     }
+
+     /**
+     * @Route("/trailer/{id}", name="trailer")
+     */
+    public function trailer(HttpClientInterface $httpClient, string $id)
+    {
+        $genres = $this->getGenres();
+        $this->id = $id;
+
+        $response = $httpClient->request(
+            'GET',
+            "https://imdb-api.com/fr/API/YouTubeTrailer/k_v91d9g6r/{$this->id}"
+        );
+
+        $response->getStatusCode();
+        // $statusCode = 200
+        $response->getHeaders()['content-type'][0];
+        // $contentType = 'application/json'
+        $response->getContent();
+
+        return $this->render('/home/trailer.html.twig', [
+            'genres' => $genres,
+            'trailer' => $response->toArray()
+        ]);
+    }
+
 
     /**
      * Get the value of lists

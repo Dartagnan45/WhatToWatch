@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Trailer{% endblock %}
+
+{% block body %}
+{% include "navbar.html.twig" %}
+
+<body class="body-movies">
+    <div class="container">
+        <div class="video-responsive">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/{{ trailer.videoId}}" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -22,9 +22,13 @@
     border: solid 2px $java;
 }
 
-.director {
+.director, .p-trailer {
     color: $mystic;
     text-decoration: underline $jaffa;
+}
+
+.trailer {
+    align-items: center;
 }
 
 

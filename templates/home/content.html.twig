@@ -1,15 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Résumé
-{% endblock %}
+{% block title %}Résumé{% endblock %}
 
 {% block body %}
 
 {% include "navbar.html.twig" %}
-
-{# <pre>
-	{{ dump(movie) }}
-</pre> #}
 
 <body class="body-movies">
 	<h3 class="title-show">{{ movie.fullTitle }}</h3>
@@ -37,6 +32,15 @@
 							<p class="director-name">{{ director.name}}</p>
 						</div>
 						{% endfor %}
+					</div>
+					<div class="row trailer">
+						<div class="col-2">
+							<p class="p-trailer">Trailer : </p>
+						</div>
+						<div class="col-2">
+							<a href="{{ path("trailer",{'id' : movie.id})}}"><img
+									src="{{asset('build/images/YouTube_23392.347a914b.png')}}" alt="youtube"></a>
+						</div>
 					</div>
 				</div>
 			</div>
