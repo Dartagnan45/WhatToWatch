@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -61,8 +60,8 @@ class HomeController extends AbstractController
             'list' => $list,
             'genres' => $genres,
             'movies' => $response->toArray(),
-            'title_films' => 'Top 50 des films genre : ',
-            'title_series' => 'Top 50 des '
+            'title_films' => 'Top 100 des meilleurs genre : ',
+            'title_series' => 'Top 50 des meilleures '
         ]);
     }
 
@@ -76,7 +75,7 @@ class HomeController extends AbstractController
 
         $response = $httpClient->request(
             'GET',
-            "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}"
+            "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}~,Language.fr"
         );
 
         $response->getStatusCode();
@@ -93,7 +92,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/trailer/{id}", name="trailer")
      */
     public function trailer(HttpClientInterface $httpClient, string $id)

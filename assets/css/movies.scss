@@ -1,88 +1,100 @@
 @import "vars";
 
 .body-movies {
-    background-color: $outer-space;
-    color: $mystic;
+  background-color: $outer-space;
+  color: $mystic;
 }
 
 .title-show {
-    margin-top: 2%;
-    color: $jaffa;
-    font-family: $righteous;
-    font-weight: bold;
-    font-size: 4em;
-    text-decoration: underline overline $java;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  margin-top: 2%;
+  color: $jaffa;
+  font-family: $righteous;
+  font-weight: bold;
+  font-size: 4em;
+  text-decoration: underline overline $java;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .card {
-    background-color: $outer-space;
-    width: 18rem;
-    margin: 2rem;
+  background-color: $outer-space;
+  width: 21rem;
+  margin: auto; /* Added */
+  float: none; /* Added */
+  margin-top: 20px; /* Added */
 }
 
 .poster {
-    width: 18rem;
-    height: 28rem;
+  object-fit: cover;
+  width: 18rem;
+  height: 28rem;
 }
 
 .card-text {
-    font-size: rem-clac(10);
-    font-weight: bold;
-    text-align: center;
-    text-decoration: underline $jaffa;
-    color: $java;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  font-size: rem-clac(10);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline $jaffa;
+  color: $java;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .card-body {
-    background-color: $outer-space;
-    border: solid 1px $mystic;
-
+  background-color: $outer-space;
+  border: solid 1px $mystic;
 }
 
 .circle {
-    position: absolute;
-    text-align: center;
-    top: 7%;
-    left: 3%;
-    width: 40px;
-    height: 40px;
-    color: $mystic;
-    background-color: $outer-space;
-    border: solid 1px balck;
-    border-radius: 100%;
-    z-index: 7;
+  position: absolute;
+  text-align: center;
+  top: 7%;
+  left: 3%;
+  width: 40px;
+  height: 40px;
+  color: $mystic;
+  background-color: $outer-space;
+  border: solid 1px balck;
+  border-radius: 100%;
+  z-index: 7;
 }
 
 .rating {
-    padding-top: 25%;
-    font-weight: bold;
-    vertical-align: middle;
+  padding-top: 25%;
+  font-weight: bold;
+  vertical-align: middle;
 }
 
 .select {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: rem-clac(10);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: rem-clac(10);
+}
+
+.body-movies {
+  background-image: url("../img/cine-room.jpeg");
+  background-color: transparent;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .video-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+  width: 70em;
+  margin-top: 5%;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
 .video-responsive iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

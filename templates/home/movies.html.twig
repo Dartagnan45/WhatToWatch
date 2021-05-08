@@ -1,39 +1,69 @@
 {% extends 'base.html.twig' %}
-{% block title %}Top 50{% endblock %}
+{% block title %}Top 50
+{% endblock %}
 {% block body %}
 
-{% include "navbar.html.twig" %}
+	{% include "navbar.html.twig" %}
 
-<body class="body-movies">
+	<body class="body-movies">
 
-	{% for key,genre in genres %}
-		{% if list == genre and key != 'series'  %}
-			<h1 class="title-show">{{ title_films~key }}</h1>
-		{% elseif list == genre and key == 'series'  %}
-			<h1 class="title-show">{{ title_series~key }}</h1>
-		{% endif %}
-	{% endfor %}
+		{% for key,genre in genres %}
+			{% if list == genre and key != 'series'  %}
+				<h1 class="title-show">{{ title_films~key }}</h1>
+			{% elseif list == genre and key == 'series'  %}
+				<h1 class="title-show">{{ title_series~key }}</h1>
+			{% endif %}
+		{% endfor %}
 
-	<div class="container-fluid">
-		<div class="row">
-
-			{% for movie in movies.items|sort((a,b) => b.imDbRating <=> a.imDbRating)|slice(0, 50)%}
-			<div class="col-sm-3">
-				<div class="card">
-					<a href="{{ path("content",{'title': movie.id}) }}"><img class="card-img-top poster"
-							src="{{ movie.image }}" alt="Card image cap"></a>
-					<div class="circle">
-						<span class="rating">{{ movie.imDbRating }}</span>
-					</div>
+		<div class="container-fluid">
+			<div
+				class="row">
+				{# example #}
+				<div class="card sm-4 ml-4 mx-auto">
+					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
 					<div class="card-body">
-						<p class="card-text">{{ movie.title }}</p>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 					</div>
 				</div>
+
+				<div class="card sm-4 ml-4 mx-auto">
+					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card sm-4 ml-4 mx-auto">
+					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card sm-4 ml-4 mx-auto">
+					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				{# example #}
+
+				{% for movie in movies.items|sort((a,b) => b.imDbRating <=> a.imDbRating)|slice(0, 50)%}
+					<div class="col-sm-4 col-md-3">
+						<div class="card">
+							<img class="card-img-top poster" src="{{ movie.image }}" alt="Card image cap">
+							<div class="circle">
+								<span class="rating">{{ movie.imDbRating }}</span>
+							</div>
+							<div class="card-body">
+								<a href="{{ path("content",{'title': movie.id}) }}">
+									<p class="card-text">{{ movie.title }}</p>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				{% endfor %}
+
 			</div>
-
-			{% endfor %}
-
 		</div>
-	</div>
-</body>
+	</body>
 {% endblock %}
