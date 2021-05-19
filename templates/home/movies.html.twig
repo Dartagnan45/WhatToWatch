@@ -19,7 +19,7 @@
 			<div
 				class="row">
 				{# example #}
-				<div class="card sm-4 ml-4 mx-auto">
+				{# <div class="card sm-4 ml-4 mx-auto">
 					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -43,11 +43,11 @@
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 					</div>
-				</div>
+				</div> #}
 				{# example #}
 
-				{% for movie in movies.items|sort((a,b) => b.imDbRating <=> a.imDbRating)|slice(0, 50)%}
-					<div class="col-sm-4 col-md-3">
+				{% for movie in movies.items|sort((a,b) => b.imDbRating <=> a.imDbRating)|slice(0, 100)%}
+					<div class="col-sm-4 col-md-3 col-ml-5 mx-auto">
 						<div class="card">
 							<img class="card-img-top poster" src="{{ movie.image }}" alt="Card image cap">
 							<div class="circle">

@@ -21,6 +21,11 @@ class HomeController extends AbstractController
         'series' => 'ls052258183'
     ];
 
+    // clé TMDB
+    protected $key = '956fb5e5877765d8c3dcb875e29737e5';
+
+    // example API TMDB
+    // https://api.themoviedb.org/3/list/{list_id}?api_key=<<$key>>&language=fr-FR
     /**
      * @Route("/home", name="home")
      */
@@ -39,10 +44,9 @@ class HomeController extends AbstractController
      */
     public function movies_Show(HttpClientInterface $httpClient, string $list)
     {
+
         $genres = $this->getGenres();
         $this->list = $list;
-
-
         $response = $httpClient->request(
             'GET',
             "https://imdb-api.com/fr/API/IMDbList/k_v91d9g6r/{$this->list}"
@@ -53,14 +57,13 @@ class HomeController extends AbstractController
         $response->getHeaders()['content-type'][0];
         // $contentType = 'application/json'
         $response->getContent();
-
         // dd($response->toArray());
         return $this->render('/home/movies.html.twig', [
             'controller_name' => 'HomeController',
             'list' => $list,
             'genres' => $genres,
             'movies' => $response->toArray(),
-            'title_films' => 'Top 100 des meilleurs genre : ',
+            'title_films' => 'Liste des 50 gi meilleurs films genre : ',
             'title_series' => 'Top 50 des meilleures '
         ]);
     }
@@ -75,7 +78,7 @@ class HomeController extends AbstractController
 
         $response = $httpClient->request(
             'GET',
-            "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}~,Language.fr"
+            "https://imdb-api.com/fr/API/Title/k_v91d9g6r/{$this->title}"
         );
 
         $response->getStatusCode();
