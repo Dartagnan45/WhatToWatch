@@ -13,7 +13,7 @@
   color: $jaffa;
   font-family: $righteous;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 3rem;
   text-decoration: underline overline $java;
   margin-top: rem-calc(25);
   margin-bottom: rem-calc(20);
@@ -21,15 +21,16 @@
 
 // carousel
 #demo {
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  width: rem-calc(1100);
-  height: rem-calc(500);
-  border-radius: 8px;
+  max-width: 70em;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  margin-top: 2em;
+  border-radius: 8px;
   text-align: center;
-  width: 70em;
+  // min-width: 200px;
   border-radius: 8px;
   box-shadow: 1px 1px 50px rgba($mystic, 0.5);
 
@@ -50,27 +51,39 @@
 }
 
 .carousel-caption {
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba($mystic, 0.5);
   text-align: center;
-  width: 40em;
+  // width: 40em;
+  // height: 10em;
   border-radius: 8px;
-
 }
 
 .carousel-caption h3 a {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: $jaffa;
   font-size: rem-calc(50);
   text-decoration: underline 5px rgba($outer-space, 1);
 }
 
-.carousel-caption p {
-  color: $java;
-  background: rgba($outer-space, 0.7);
-  font-size: rem-calc(30);
-}
+// .carousel-caption p {
+//   position: relative;
+//   margin: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: $java;
+//   background: rgba($outer-space, 0.7);
+//   font-size: rem-calc(30);
+// }
 
 .img-car {
   border-radius: 8px;

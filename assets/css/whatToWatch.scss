@@ -22,39 +22,41 @@ h4 {
 }
 
 .title {
-    margin: 2%;
+    margin: 1rem;
     color: $jaffa;
     font-family: $righteous;
     font-weight: bold;
-    font-size: 5em;
+    font-size: 6vw;
     text-decoration: underline overline $java;
+    text-align: center;
 }
 
-p {
+
+.block{
+    background-color: rgba($outer-space, 1);
+    margin-top: 10em;
+    opacity: 0.7;
+    line-height: 6rem; 
+    align-items: center;
+}
+
+.sub-title {
+    font-family: $vollkorn;
+    font-size: 5em;
+    font-weight: bold;
+    color: $java;
+    text-decoration: underline $jaffa;
+    text-align: center;
+}
+
+.p-home{
     font-family: $vollkorn;
     font-weight: bold;
-}
-
-.p-index {
-    margin: 1em;
-    font-family: $vollkorn;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
     color: $java;
     text-align: center;
-    text-decoration: underline $jaffa;
-}
-
-.block {
-    background-color: rgba($outer-space, 1);
-    margin-top: 10em;
-    width: 100%;
-    height: 20em;
-    opacity: 0.7;
-    align-items: center;
-    vertical-align: middle;
-    line-height: 10em; 
-    white-space: nowrap;
+    text-decoration: none;
 }
 
 #button {
@@ -71,6 +73,7 @@ p {
     background-color: $jaffa;
     padding: 1em;
     width: 10em;
+    margin-top: 5em;
 }
 
 #button:hover {

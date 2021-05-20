@@ -1,15 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-default navbar-full">
+<!--Navbar-->
+<nav
+	class="navbar navbar-expand-lg navbar-default navbar-full">
+	<!-- Navbar brand -->
 	<a class="navbar-brand" href="{{path("/")}}">WhatToWatch</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
+	<!-- Collapse button -->
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">
+			<i class="fas fa-bars fa-1x"></i>
+		</span>
 	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<!-- Collapsible content -->
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<!-- Links -->
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Listes de films
 				</a>
-				<div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					{% for key,genre in genres %}
 						{% if key != 'series' %}
 							<a id="item" class="dropdown-item " href="{{ path("movies_show",{ 'list': genre }) }}">{{ key }}</a>
@@ -21,5 +29,6 @@
 				<a class="nav-link" href="{{ path("movies_show",{ 'list': genres.series }) }}">Séries</a>
 			</li>
 		</ul>
+		<!-- Links -->
 	</div>
 </nav>

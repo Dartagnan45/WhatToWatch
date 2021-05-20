@@ -6,17 +6,17 @@
 
 {% block body %}
 	<body class="home">
-
-		<div class="container-fluid">
+		<div class="container">
 			<h1 class="title">
 				{{ title }}</h1>
+			<div class="block">
+				<h2 class="sub-title">Vous ne savez pas quoi regarder ?</h2>
+				<p class="p-home">Ici vous trouverez les listes des 50 des meilleurs films et séries selon IMDB par genre</p>
+			</div>
 		</div>
-		<div class="block">
-			<p class="p-index">Bienvenue sur What To Watch
-		</br>
-			Ici vous trouverez les liste des 50 des meilleurs films et séries selon IMDB</p>
-		</div>
-		<a class="btn" id="button" href="{{ path("home")}}">
-			<span class="text-button">GO !</span></a>
+
+		<a type="submit" class="btn" id="button" href="{{ path("home")}}">
+			<span class="text-button">GO !</span>
+		</a>
 	</body>
 {% endblock %}
