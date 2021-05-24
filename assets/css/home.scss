@@ -1,11 +1,13 @@
 @import "vars";
 
-.body-home {
+.body-movies {
   background-image: url("../img/cine-room.jpeg");
-  background-color: transparent;
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat, repeat;
+  width: 100%;
+  height: auto;
 }
 
 #home-title {

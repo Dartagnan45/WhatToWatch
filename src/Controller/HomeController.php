@@ -63,7 +63,7 @@ class HomeController extends AbstractController
             'list' => $list,
             'genres' => $genres,
             'movies' => $response->toArray(),
-            'title_films' => 'Liste des 50 gi meilleurs films genre : ',
+            'title_films' => 'Liste des 50 meilleurs films genre : ',
             'title_series' => 'Top 50 des meilleures '
         ]);
     }

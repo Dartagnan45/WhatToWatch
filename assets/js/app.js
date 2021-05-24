@@ -11,6 +11,7 @@ import '../css/home.scss';
 import '../css/movies.scss';
 import '../css/navbar.scss';
 import '../css/content.scss';
+import '../css/trailer.scss';
 import '../img/aventure.jpg';
 import '../img/espace.jpg';
 import '../img/gun.jpg';
